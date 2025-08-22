@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch src/scss:build/css",
+    "sass": "sass --watch scss/app.scss:build/css/app.css",
     "dev": "gulp"
   },
   "keywords": [
@@ -13,11 +13,15 @@
     "NPM",
     "Gulp"
   ],
-  "author": "David Tobia",
+  "author": "Fernando Tobia",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^5.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
+    "live-server": "^1.2.2",
+    "minimatch": "^3.0.5",
     "sass": "^1.90.0"
   },
   "dependencies": {
@@ -78,6 +82,7 @@
     "global-prefix": "^1.0.2",
     "glogg": "^2.2.0",
     "graceful-fs": "^4.2.11",
+    "gsap": "^3.13.0",
     "gulp-cli": "^3.1.0",
     "gulplog": "^2.2.0",
     "has-flag": "^4.0.0",
@@ -147,8 +152,8 @@
     "stream-composer": "^1.0.2",
     "stream-exhaust": "^1.0.2",
     "streamx": "^2.22.1",
-    "string-width": "^4.2.3",
     "string_decoder": "^1.3.0",
+    "string-width": "^4.2.3",
     "strip-ansi": "^6.0.1",
     "supports-color": "^7.2.0",
     "supports-preserve-symlinks-flag": "^1.0.0",
@@ -174,5 +179,13 @@
     "y18n": "^5.0.8",
     "yargs": "^16.2.0",
     "yargs-parser": "^20.2.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FTTradeSolutions/CNAME.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FTTradeSolutions/CNAME/issues"
+  },
+  "homepage": "https://github.com/FTTradeSolutions/CNAME#readme"
 }

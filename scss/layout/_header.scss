@@ -1,51 +1,59 @@
-@use 'base/variables' as v;
-@use 'base/mixins' as m;
-.header{
-    background-color: v.$verde;
-    @include m.tablet{
-        &.fixed{
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            box-shadow: .1rem .2rem .3rem #333;
-        }
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.header {
+  background-color: v.$blanco;
+
+  @include m.tablet {
+    &.fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
     }
-    
-    .contenido-header{
-        padding: 2rem;
-        @include m.tablet{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        };
-        
+  }
+
+  .contenido-header {
+    padding: 0.5rem 0; // header más fino, sin margen horizontal
+    @include m.tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%; // ocupa todo el ancho
     }
-    h1{
-        color:v.$blanco;
-        text-align: center;
-        @include m.tablet{
-            text-align: left;
-            margin: 0;
-         }
-        
-    }
+  }
+
+  h1 {
+    color: v.$marron;
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    padding-left: 0rem; // un poco de espacio del borde de pantalla
+  }
 }
-.navegacion-principal{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    @include m.tablet{
-       flex-direction: row; 
+
+.navegacion-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  @include m.tablet {
+    flex-direction: row;
+  }
+
+  a {
+    color: v.$marron;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover,
+    &.active {
+      color: v.$beige;
     }
-    a {
-        color: v.$blanco;
-        font-size: 2.4rem;
-        &:hover, &.active{
-            color: v.$amarillo;
-        }
-        
-    }
-    
+  }
 }

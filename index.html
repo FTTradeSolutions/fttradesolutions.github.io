@@ -1,100 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festival De Música</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <a href="index.html">
-               <h1>Tech & EDM Festival</h1> 
-            </a>
-           
-            <nav class="navegacion-principal">
-                <a href="#galeria">Galeria</a>
-                <a href="#boletos">Boletos</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
-    </header>
-    <div class="video">
-        <div class="overlay">
-            <div class="contenedor contenido-video">
-                <h2>Techno & EDM Festival</h2>
-                <p>Julio 2026, CDMX. México</p>
-            </div>
-        </div>
-        <video autoplay muted loop>
-            <source src="video/dj.mp4" type="video/mp4"/>
-            <source src="video/dj.ogv" type="video/ogg"/>
-            <source src="video/dj.webm" type="video/webm"/>
-        </video>
-    </div>
-    <section class="sobre-festival">
-        <div class="imagen">
-            <img src="src/img/imagen_dj.jpg" alt="imagen_dj">
-        </div>
-        <div class="contenido-festival">
-            <h2>Techno & EDM Festival</h2>
-            <p class="fecha">Julio 2026, CDMX. México</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Iure, vel laboriosam. Expedita facilis quo nesciunt necessitatibus similique iusto voluptatum, accusantium laboriosam et voluptatem ex repellat ullam officia placeat, fugit voluptate.</p>
-        </div>
-    </section>
-    <section id="galeria" class="galeria">
-        <h3>Galería</h3>
-        <div class="galeria-imagenes">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FT Trade & Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="build/css/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
 
+<!-- VIDEO PRINCIPAL -->
+<div class="video">
+  <video autoplay muted loop>
+    <source src="video/Video Pagina principal WEB HD.mp4" type="video/mp4" />
+  </video>
+
+  <div class="overlay">
+    <div class="contenido-video">
+      <!-- Texto del video -->
+      <div class="video-titulos">
+        <h2>Fernando Tobía</h2>
+        <h3>Trade & Solutions</h3>
+      </div>
+
+      <!-- Logo a la derecha del texto -->
+      <img src="img/logo.png" alt="Logo FTTS" class="logo-video" />
+    </div>
+
+    <!-- Lema o frase debajo del texto -->
+    <p>Conectamos tu Negocio con el Mundo</p>
+  </div>
+</div>
+
+    <!-- BODY 1: texto derecha, imagen izquierda, con Swiper -->
+    <section class="Body Body-swiper">
+      <div class="Body-gallery swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/1.png" alt="Contenedores FTTS" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/3.png" alt="Equipo FTTS" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/2.png" alt="Crecimiento FTTS" />
+          </div>
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="Titulo-Body">
+      <h2>¿Está tu negocio preparado para crecer?</h2>
+      <p class="Subtitulo">Quiénes somos</p>
+      <p>
+        En FT Trade Solutions impulsamos a empresas a dar su siguiente paso,
+        ya sea en su propio mercado o en nuevos destinos. Somos tu socio
+        estratégico en desarrollo de negocio y expansión comercial. Trabajamos
+        contigo para transformar oportunidades en resultados.
+      </p>
+    </div>
+      </div>
     </section>
-    <section id="boletos" class="contenedor-boletos">
-        <h3>Boletos</h3>
-    
-        <div class="boletos">
-            <div class="pase">
-                <p class="pase-nombre">Pase 1 Día</p>
-                <header class="pase-header">
-                    <p>Incluye</p>
-                </header>
-                <div class="pase-body">
-                    <ul>
-                        <li>Acceso a ambos escenarios</li>
-                        <li>Bebida Ilimitada</li>
-                        <li>Camisa / Pulsera del Evento</li>
-                    </ul>
-                </div>
-                <footer class="pase-footer">
-                    <p>$100</p>
-                </footer>
-            </div>
-            <div class="pase">
-                <p class="pase-nombre">Pase 2 Días</p>
-                <header class="pase-header">
-                    <p>Incluye</p>
-                </header>
-                <div class="pase-body">
-                    <ul>
-                        <li>Acceso a ambos escenarios</li>
-                        <li>Bebida Ilimitada</li>
-                        <li>Camisa / Pulsera del Evento</li>
-                        <li>Acceso VIP</li>
-                    </ul>
-                </div>
-                <footer class="pase-footer">
-                    <p>$180</p>
-                </footer>
-            </div>
+
+    <!-- BODY 2: texto izquierda, imagen derecha, con Swiper -->
+    <section class="Body2 Body-swiper">
+      <div class="Titulo-Body2">
+      <h2>¿Tienes un plan claro para los próximos 3 años de tu negocio?</h2>
+      <p class="Subtitulo">Preparación para el futuro.</p>
+      <p>
+        El crecimiento sostenido no ocurre por azar: se diseña con estrategia,
+        visión y pasos bien definidos.<br>
+        No importa dónde estés ahora, lo importante es hasta dónde quieres llegar.
+      </p>
+    </div>
+      <div class="Body-gallery swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/6.png" alt="Crecimiento FTTS" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/5.png" alt="Crecimiento FTTS" />
+          </div><div class="swiper-slide">
+            <img src="img/4.png" alt=" Crecimiento global FTTS" />
+          </div>
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
     </section>
+
+    <!-- BODY 3: texto derecha, imagen izquierda, con Swiper -->
+    <section class="Body3 Body-swiper">
+      <div class="Body-gallery swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/7.png" alt="Estrategia global FTTS" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/8.png" alt="Estrategia FTTS" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/9.png" alt=" Crecimiento FTTS" />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="Body3-text">
+      <h2>Construyamos juntos tu crecimiento</h2>
+      <p class="Subtitulo">Cerca de ti, donde nos necesites.</p>
+      <p>
+      <p>
+        En FT Trade & Solutions diseñamos estrategias que transforman tu
+        visión en resultados concretos. Con un plan sólido, tu negocio puede
+        conquistar nuevos horizontes. Avanzamos contigo, paso a paso.         
+      </p>
+    </div>
+    </section>
+    <!-- BODY 4: CONTACTANOS -->
+<section class="Body4">
+  <div class="Body4-text">
+    <h2>CONTACTANOS</h2>
+    <p class="Subtitulo">NO PIERDAS TIEMPO y EMPEZAMOS A AYUDARTE</p>
+     <a href="mailto:ftobia@fttradesolutions.com">ftobia@fttradesolutions.com</a>
+  </div>
+  <div class="Body4-image">
+    <img src="img/Fernando.png" alt="Contacto FTTS" />
+  </div>
+</section>
+
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>Techno & EDM Festival. Todos los derechos reservados</p>
+      <p>Fernando Tobía Trade & Solutions. Todos los derechos reservados</p>
     </footer>
+
+    <!-- JS -->
     <script src="build/js/app.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+      // Inicializa Swiper solo para los Body-swiper
+      document.querySelectorAll('.Body-swiper .swiper').forEach((swiperEl) => {
+        new Swiper(swiperEl, {
+          loop: true,
+          autoplay: { delay: 5000, disableOnInteraction: false },
+          navigation: {
+            nextEl: swiperEl.querySelector('.swiper-button-next'),
+            prevEl: swiperEl.querySelector('.swiper-button-prev')
+          },
+          pagination: {
+            el: swiperEl.querySelector('.swiper-pagination'),
+            clickable: true
+          }
+        })
+      })
+    </script>
+    
+  </body>
+  
 </html>

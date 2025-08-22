@@ -1,123 +1,45 @@
-document.addEventListener('DOMContentLoaded', function(){
-    navegacionFija()
-    crearGaleria()
-    resaltarEnlace()
-    scrollNav()
-})
-function navegacionFija(){
-    const header = document.querySelector('.header')
-    const sobreFestival = document.querySelector('.sobre-festival')
-    document.addEventListener('scroll', function(){
-        if(sobreFestival.getBoundingClientRect().bottom<1){
-            header.classList.add('fixed')
-        }else{
-            header.classList.remove('fixed')
-        }
-    })
-}
-function crearGaleria(){
-const galeria = document.querySelector('.galeria-imagenes')
-const CANTIDAD_IMAGENES = 17
-for(let i =1; i<CANTIDAD_IMAGENES; i++){
-const imagen = document.createElement('IMG');
-imagen.src = `src/img/gallery/full/${i}.jpg`;
-imagen.alt= 'Imagen Galería';
+// ============================================================
+// APP.JS - Funcionalidad principal FT Trade & Solutions
+// ============================================================
 
-imagen.onclick = function(){
-    mostrarImagen(i)
-}
-galeria.appendChild(imagen)
-}
-}
+// ---------------------------
+// NAVEGACIÓN SUAVE
+// ---------------------------
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
 
-function mostrarImagen(i){
-const imagen = document.createElement('IMG');
-imagen.src = `src/img/gallery/full/${i}.jpg`;
-imagen.alt= 'Imagen Galería';
+// ---------------------------
+// SWIPER BODY3
+// ---------------------------
+const swiperBody3 = new Swiper('.Body3-swiper', {
+  // Opciones
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 20,
+  centeredSlides: true,
+  grabCursor: true,
 
-const modal =document.createElement('DIV')
-modal.classList.add('modal')
-modal.onclick= cerrarModal;
+  // Paginación
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
 
-const cerrarModalBtn = document.createElement('BUTTON')
-cerrarModalBtn.textContent ='X'
-cerrarModalBtn.classList.add('btn-cerrar')
-cerrarModalBtn.onclick= cerrarModal;
-modal.appendChild(imagen);
-modal.appendChild(cerrarModalBtn)
-const body = document.querySelector('body')
-body.classList.add('overflow-hidden')
-body.appendChild(modal)
-}
-function cerrarModal(){
-    const modal = document.querySelector('.modal')
-    modal.classList.add('fade-out')
-    setTimeout(()=>{
-        modal?.remove('modal')
-        const body = document.querySelector('body')
-        body.classList.remove('overflow-hidden')
-    },500)
-    
-}
-function resaltarEnlace(){
-    document.addEventListener('scroll', function(){
-        const sections = document.querySelectorAll('section')
-        const navLinks = document.querySelectorAll('.navegacion-princial a')
-        
-        let actual = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop
-            const sectionHeight = section.clientHeight
-        if(window.scrollY >=(sectionTop-sectionHeight/3)){
-            actual = section.id
-        }
-        })
-        
-        navLinks.forEach(link => {
-            
-            link.classList.remove('active')
-            if(link.getAttribute('href')==='#' + actual){
-                link.classList.add('active')
-               
-            }
-        })
-    })
-}
-function scrollNav() {
-    const navLinks = document.querySelectorAll('.navegacion-principal a')
-    const sections = document.querySelectorAll('section')
+  // Navegación
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
 
-    // ---- Resaltar enlace activo en scroll ----
-    document.addEventListener('scroll', () => {
-        let actual = ''
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop
-            const sectionHeight = section.clientHeight
-            if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
-                actual = section.id
-            }
-        })
-
-        navLinks.forEach(link => {
-            link.classList.remove('active')
-            const href = link.getAttribute('href')
-            if (href.startsWith('#') && href === '#' + actual) {
-                link.classList.add('active')
-            }
-        })
-    })
-
-    // ---- Scroll suave SOLO para enlaces internos ----
-    navLinks.forEach(link => {
-        link.addEventListener('click', e => {
-            const href = link.getAttribute('href')
-            if (href.startsWith('#')) {
-                e.preventDefault()
-                const section = document.querySelector(href)
-                if (section) {
-                    section.scrollIntoView({ behavior: 'smooth' })
-                }
-            }
-        })
-    })
-}
+  // Responsive breakpoints
+  breakpoin

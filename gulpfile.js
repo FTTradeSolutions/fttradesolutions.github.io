@@ -1,20 +1,31 @@
 import { src, dest, watch, series } from 'gulp'
-import * as dartSass from 'sass'
 import gulpSass from 'gulp-sass'
+import * as dartSass from 'sass' // Cambiado a import * as sass from 'sass'
+import rename from 'gulp-rename'
 
 const sass = gulpSass(dartSass)
-export function js(done){
-    src('src/js/app.js')   
-    .pipe(dest('build/js'))
-done()
-}
-export function css(done){
-src('src/scss/app.scss', {sourcemaps:true}).pipe(sass().on('error', sass.logError)).pipe(dest('build/css', {sourcemaps:true}))
-done()
+
+// Compilar JS
+export function js() {
+  return src('js/**/*.js', { allowEmpty: true }).pipe(dest('build/js'))
 }
 
-export function dev(){
-watch('src/scss/**/*.scss', css);
-watch('src/js/**/*.js', js)
+// Compilar SCSS ignorando parciales (_archivo.scss)
+export function css() {
+  return src(['scss/**/*.scss', '!scss/**/_*.scss'], {
+    sourcemaps: true,
+    allowEmpty: true
+  })
+    .pipe(sass().on('error', sass.logError))
+    .pipe(rename({ dirname: '' }))
+    .pipe(dest('build/css', { sourcemaps: true }))
 }
+
+// Watch para desarrollo
+export function dev() {
+  watch('scss/**/*.scss', css)
+  watch('src/js/**/*.js', js)
+}
+
+// Tarea por defecto
 export default series(js, css, dev)

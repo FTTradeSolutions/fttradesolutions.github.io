@@ -1,0 +1,60 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.Body4 {
+  width: 100%;
+  padding: 5rem 3rem;
+  display: flex;
+  flex-direction: column; // texto arriba, imagen abajo
+  align-items: center;
+  justify-content: center;
+  gap: 3rem; // separación entre texto e imagen
+  background-color: v.$blanco;
+
+  .Body4-text {
+    text-align: center;
+    max-width: 800px;
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .Subtitulo {
+      color: v.$verde;
+      font-weight: 700;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: v.$blanco;
+      background-color: v.$granate;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
+      &:hover {
+        background-color: darken(v.$granate, 10%);
+      }
+    }
+  }
+
+  .Body4-image {
+    width: 100%;
+    max-width: 1000px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
