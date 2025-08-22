@@ -1,37 +1,39 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-/* SCSS unificado para Body, Body2 y Body3 */
+/* Cuerpos Body, Body2 y Body3 */
 .Body,
 .Body2,
 .Body3 {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* dos columnas por defecto */
+  grid-template-columns: 1fr 1fr; // Dos columnas por defecto
   gap: 5rem;
   align-items: center;
   padding: 5rem 3rem;
 
-  .Titulo-Body,
-  .Titulo-Body2,
-  .Body3-text {
-    max-width: 800px;
-    text-align: left;
-    padding: 1rem;
+  h2 {
+    font-size: 3.4rem;
+    margin-bottom: 1.5rem;
+  }
 
-    h2 {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-    }
-    p {
-      font-size: 1.8rem;
-      line-height: 1.6;
-    }
+  p {
+    font-size: 1.8rem;
+    line-height: 1.6;
   }
 
   .Subtitulo {
     color: v.$verde;
     font-weight: 700;
+  }
+
+  .Titulo-Body,
+  .Titulo-Body2,
+  .Body3-text {
+    max-width: 100%;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
   }
 
   .imagen,
@@ -46,6 +48,16 @@
       display: block;
     }
   }
+
+  .Body-gallery {
+    .swiper {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .swiper-slide {
+      width: 100% !important;
+    }
+  }
 }
 
 /* Móvil: una columna, texto arriba, imagen/carrusel abajo */
@@ -54,21 +66,31 @@
   .Body2,
   .Body3 {
     grid-template-columns: 1fr;
-    padding: 3rem 1.5rem;
     gap: 2rem;
 
     .Titulo-Body,
     .Titulo-Body2,
     .Body3-text {
-      order: 1; /* texto arriba */
+      order: 1; // texto arriba
+      width: 100%;
       max-width: 100%;
-      text-align: center;
     }
 
     .imagen,
     .Body-gallery {
-      order: 2; /* imagen abajo */
+      order: 2; // imagen abajo
+      width: 100%;
       max-width: 100%;
+      justify-self: center;
+    }
+
+    .Body-gallery {
+      .swiper,
+      .swiper-slide {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
     }
   }
 }
+
