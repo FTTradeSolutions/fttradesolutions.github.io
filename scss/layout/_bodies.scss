@@ -1,57 +1,3 @@
-@use '../base/variables' as v;
-@use '../base/mixins' as m;
-
-/* SCSS unificado para Body, Body2 y Body3 */
-.Body,
-.Body2,
-.Body3 {
-  width: 100%;
-  padding: 0 3rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* DOS columnas por defecto */
-  align-items: center;
-  gap: 5rem;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
-
-  h2 {
-    font-size: 3.4rem;
-    margin-bottom: 1.5rem;
-  }
-
-  p {
-    font-size: 1.8rem;
-    line-height: 1.6;
-  }
-
-  .Subtitulo {
-    color: v.$verde;
-    font-weight: 700;
-  }
-
-  .imagen,
-  .Body-gallery {
-    max-width: 800px;
-    width: 100%;
-    justify-self: center;
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-  }
-
-  .Titulo-Body,
-  .Titulo-Body2,
-  .Body3-text {
-    max-width: 800px;
-    text-align: center;
-    padding: 2rem;
-  }
-}
-
-/* Móvil: Una columna, texto arriba, imagen/carrusel debajo */
 @media (max-width: 768px) {
   .Body,
   .Body2,
@@ -62,18 +8,28 @@
     .Titulo-Body,
     .Titulo-Body2,
     .Body3-text {
-      order: 1; /* texto arriba */
+      order: 1;
+      max-width: 100%;      // <- quitar límite de ancho
+      padding: 1rem;        // <- un poco de espacio lateral
+      text-align: center;
       h2 {
-        font-size: 5vw; /* adaptable a la pantalla */
+        font-size: 6vw;     // escalable al ancho de la pantalla
       }
       p {
-        font-size: 4vw;
+        font-size: 4.5vw;   // escalable al ancho de la pantalla
       }
     }
 
     .imagen,
     .Body-gallery {
-      order: 2; /* imagen/carrusel debajo */
+      order: 2;
+      max-width: 100%;      // <- ocupar todo el ancho
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
+
