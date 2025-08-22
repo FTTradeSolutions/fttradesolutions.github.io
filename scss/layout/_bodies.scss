@@ -1,16 +1,18 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-/* Cuerpos Body, Body2 y Body3 */
+/* SCSS unificado para Body, Body2 y Body3 */
 .Body,
 .Body2,
 .Body3 {
   width: 100%;
+  padding: 0 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr; // Dos columnas por defecto
-  gap: 5rem;
+  grid-template-columns: 1fr 1fr; /* DOS columnas por defecto */
   align-items: center;
-  padding: 5rem 3rem;
+  gap: 5rem;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
 
   h2 {
     font-size: 3.4rem;
@@ -27,19 +29,10 @@
     font-weight: 700;
   }
 
-  .Titulo-Body,
-  .Titulo-Body2,
-  .Body3-text {
-    max-width: 100%;
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-  }
-
   .imagen,
   .Body-gallery {
+    max-width: 800px;
     width: 100%;
-    max-width: 100%;
     justify-self: center;
 
     img {
@@ -49,48 +42,31 @@
     }
   }
 
-  .Body-gallery {
-    .swiper {
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-    .swiper-slide {
-      width: 100% !important;
-    }
+  .Titulo-Body,
+  .Titulo-Body2,
+  .Body3-text {
+    max-width: 800px;
+    text-align: center;
+    padding: 2rem;
   }
 }
 
-/* Móvil: una columna, texto arriba, imagen/carrusel abajo */
-@media (max-width: 768px) {
+/* Móvil: Una columna, texto arriba, imagen/carrusel debajo usando tu mixin */
+@include m.mobile {
   .Body,
   .Body2,
   .Body3 {
     grid-template-columns: 1fr;
-    gap: 2rem;
 
     .Titulo-Body,
     .Titulo-Body2,
     .Body3-text {
       order: 1; // texto arriba
-      width: 100%;
-      max-width: 100%;
     }
 
     .imagen,
     .Body-gallery {
-      order: 2; // imagen abajo
-      width: 100%;
-      max-width: 100%;
-      justify-self: center;
-    }
-
-    .Body-gallery {
-      .swiper,
-      .swiper-slide {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
+      order: 2; // imagen/carrusel abajo
     }
   }
 }
-
